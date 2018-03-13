@@ -106,8 +106,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/3.26.0",
-                    "commit": "065312629d5d10db97860feefe11dc214c3b6852c45e0e758eb999cb454be811",
+                    "branch": "tags/3.26.2",
+                    "commit": "51637bc0960002b811e1c0c7be8671cf9a1cc5be",
                     "url": "https://git.gnome.org/browse/nautilus"
                 }
             ]
