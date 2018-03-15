@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Nautilus",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.24",
+    "runtime-version": "3.28",
     "sdk": "org.gnome.Sdk",
     "command": "nautilus",
     "finish-args": [
@@ -106,8 +106,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/3.26.2",
-                    "commit": "51637bc0960002b811e1c0c7be8671cf9a1cc5be",
+                    "branch": "tags/3.28.0",
+                    "commit": "5d6b0d52901bc46aad32a98814ca48be91ce7f98",
                     "url": "https://git.gnome.org/browse/nautilus"
                 }
             ]
