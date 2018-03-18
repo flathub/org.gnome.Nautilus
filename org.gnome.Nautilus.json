@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Nautilus",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.24",
+    "runtime-version": "3.28",
     "sdk": "org.gnome.Sdk",
     "command": "nautilus",
     "finish-args": [
@@ -63,8 +63,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/1.12.0",
-                    "commit": "9bf216331301ef4c3e71b183d992bc904302fe4a",
+                    "branch": "tags/2.0.3",
+                    "commit": "b11e0139d155e71f08d2b0d365724337a954c6c0",
                     "url": "https://git.gnome.org/browse/tracker"
                 }
             ]
@@ -75,8 +75,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/3.24.1",
-                    "commit": "10dda0f4a8b2b8fe264a7e574c1c1d35cb867cf6",
+                    "branch": "tags/3.28.0",
+                    "commit": "a33b5d28011d327f3e06717d95adade6892308c1",
                     "url": "https://git.gnome.org/browse/gnome-desktop"
                 }
             ]
@@ -86,8 +86,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/0.2.2",
-                    "commit": "6d21fd1b90afb468423b78696f4f0f432033dba5",
+                    "branch": "tags/0.2.3",
+                    "commit": "5eb820f504cb5e69526fd8511be0f98cca1c1aca",
                     "url": "https://git.gnome.org/browse/gnome-autoar"
                 }
             ]
@@ -106,8 +106,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/3.24.1",
-                    "commit": "1bab05578caf4c6eab15d385b95358efd3354c8b",
+                    "branch": "tags/3.28.0",
+                    "commit": "5d6b0d52901bc46aad32a98814ca48be91ce7f98",
                     "url": "https://git.gnome.org/browse/nautilus"
                 }
             ]
