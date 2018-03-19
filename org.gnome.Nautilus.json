@@ -1,56 +1,49 @@
 {
-    "app-id": "org.gnome.Nautilus",
+    "app-id": "org.gnome.NautilusStableFlatpak",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.28",
     "sdk": "org.gnome.Sdk",
     "command": "nautilus",
+    "tags": ["test", "stable"],
+    "desktop-file-name-prefix": "(3.28 Flatpak) ",
     "finish-args": [
         "--share=ipc", "--socket=x11",
         "--socket=wayland",
         "--talk-name=org.gnome.OnlineAccounts",
         "--talk-name=org.freedesktop.Tracker1",
-        "--filesystem=home",
+        "--filesystem=host",
         "--talk-name=org.gtk.vfs", "--talk-name=org.gtk.vfs.*",
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
-    "build-options" : {
-        "cflags": "-Wno-deprecated-declarations -Og",
-        "cxxflags": "-Wno-deprecated-declarations -Og"
-    },
-    "cleanup": [ "/include", "/share/bash-completion" ],
     "modules": [
         {
-            "name": "libexif",
+            "name": "exiv2",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/libexif/libexif-0.6.21.tar.bz2",
-                    "sha256": "16cdaeb62eb3e6dfab2435f7d7bccd2f37438d21c5218ec4e58efa9157d4d41a"
+                    "url": "http://exiv2.org/builds/exiv2-0.26-trunk.tar.gz",
+                    "sha256": "c75e3c4a0811bf700d92c82319373b7a825a2331c12b8b37d41eb58e4f18eafb"
                 },
                 {
                     "type": "shell",
                     "commands": [
-                        "cp -f /usr/share/gnu-config/config.sub .",
-                        "cp -f /usr/share/gnu-config/config.guess ."
+                        "cp -f /usr/share/gnu-config/config.sub ./config/",
+                        "cp -f /usr/share/gnu-config/config.guess ./config/"
                     ]
                 }
             ]
         },
         {
-            "name": "exempi",
-            "config-opts": [
-                "--disable-unittest"
-            ],
+            "name": "gexiv2",
+            "config-opts": [ "--disable-introspection" ],
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/2.4.2",
-                    "commit": "bee83d2636bc875286c22ea092b7f7efb8c222d8",
-                    "url": "https://anongit.freedesktop.org/git/exempi.git"
+                    "url": "https://git.gnome.org/browse/gexiv2",
+                    "tag": "gexiv2-0.10.8",
+                    "commit": "4abd0c232964a2b5a1680f2c654ce6b07744593c"
                 }
             ]
-
         },
         {
             "name": "tracker",
@@ -63,7 +56,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/2.0.3",
+                    "tag": "2.0.3",
                     "commit": "b11e0139d155e71f08d2b0d365724337a954c6c0",
                     "url": "https://git.gnome.org/browse/tracker"
                 }
@@ -75,7 +68,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/3.28.0",
+                    "tag": "3.28.0",
                     "commit": "a33b5d28011d327f3e06717d95adade6892308c1",
                     "url": "https://git.gnome.org/browse/gnome-desktop"
                 }
@@ -86,7 +79,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/0.2.3",
+                    "tag": "0.2.3",
                     "commit": "5eb820f504cb5e69526fd8511be0f98cca1c1aca",
                     "url": "https://git.gnome.org/browse/gnome-autoar"
                 }
@@ -97,18 +90,14 @@
             "builddir": true,
             "name": "nautilus",
             "config-opts": [
-                "-Denable-desktop=false",
-                "-Denable-selinux=false",
-                "-Denable-xmp=true",
-                "-Denable-exif=true",
-                "--libdir=/app/lib"
+                "--libdir=/app/lib",
+                "-Dprofile=stable-flatpak"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "branch": "tags/3.28.0",
-                    "commit": "5d6b0d52901bc46aad32a98814ca48be91ce7f98",
-                    "url": "https://git.gnome.org/browse/nautilus"
+                    "url": "https://gitlab.gnome.org/GNOME/nautilus.git",
+                    "branch": "gnome-3-28"
                 }
             ]
         }
